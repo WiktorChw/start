@@ -1,3 +1,75 @@
+<?php
+
+    $letter = 'a'; // string
+
+    $letter = '123'; // int/ number
+
+    $letters = 123.123; // float
+
+    $letters = ['a', 'b', "c"]; // array $letters[0] = 'a' ], $letters[1] = 'b'
+
+    echo $letters[2]; // c
+
+
+class Vehicle {
+    private $wheels;
+    public $velocity;
+    public $passengers;
+    private $name;
+
+    public function setWheels($wheels) {
+        $this->wheels = $wheels;
+    }
+
+    public function setVelocity($velocity) {
+        $velocity = $velocity . 'km';
+
+        $this->velocity = $velocity;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getPassengers() {
+
+        $text = implode(',', $this->passengers);
+
+        return $text . 'siedza w ' . $this->getName() . '.';
+    }
+}
+
+class Bike extends Vehicle {
+    public function __construct()
+    {
+        $this->setWheels(2);
+        $this->setVelocity(25);
+        $this->setName('Romet');
+
+        $this->passengers = ['Wiktor'];
+    }
+}
+
+class Car extends Vehicle {
+    public function __construct()
+    {
+        $this->passengers = ['Wiktor', 'Monika', 'Pawel'];
+        $this->setWheels(4);
+        $this->setName('Vauxhall');
+
+        echo $this->getPassengers(); // Wiktor,Monika,Pawel siedza w Vauxhall
+    }
+}
+
+$car = new Car();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
