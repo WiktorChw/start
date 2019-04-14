@@ -3,5 +3,20 @@ body {
 }
 
 html {
-    margin: 0;
+margin: 0;
+}
+
+@media (min-width: 576px) {
+    /*body {*/
+        /*background-color: black;*/
+    /*}*/
+}
+
+
+h1.centered-header {
+    text-align: center;
+}
+
+.right-aligned {
+    text-align: right;
 }
